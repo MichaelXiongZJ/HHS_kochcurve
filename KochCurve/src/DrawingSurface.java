@@ -7,12 +7,14 @@ import processing.event.MouseEvent;
 public class DrawingSurface extends PApplet {
 
 	private KochCurve curve;
+	private KochSnowflake snowCurve;
 	private int level, length;
 	
 	public DrawingSurface() {
 		level = 0;
 		length = 100;
 		curve = new KochCurve (level,length);
+		snowCurve = new KochSnowflake (level,length);
 	}
 	
 	// The statements in the setup() function 
@@ -33,23 +35,27 @@ public class DrawingSurface extends PApplet {
 		text("Use the mouse wheel to change length, use UP/DOWN keys to change level.",0,15);
 		
 		stroke(0);
-		curve.draw(this);		
+	//	curve.draw(this);		
+		snowCurve.draw(this);
 	}
 	
 	
 	public void mouseWheel(MouseEvent event) {
 		  int num = event.getCount();
 		  length -= num*10;
-		  curve = new KochCurve(level,length);
+	//	  curve = new KochCurve(level,length);
+		  snowCurve = new KochSnowflake(level,length);
 	}
 	
 	public void keyPressed() {
 		if (keyCode == KeyEvent.VK_UP) {
 			level++;
-			curve = new KochCurve(level,length);
+	//		curve = new KochCurve(level,length);
+			snowCurve = new KochSnowflake(level,length);
 		} else if (keyCode == KeyEvent.VK_DOWN) {
 			level--;
-			curve = new KochCurve(level,length);
+	//		curve = new KochCurve(level,length);
+			snowCurve = new KochSnowflake(level,length);
 		}
 	}
 	

@@ -1,3 +1,4 @@
+
 import processing.core.PApplet;
 import zxiong.shapes.Line;
 
@@ -9,7 +10,7 @@ import zxiong.shapes.Line;
   @author
   @version
 */
-public class KochCurve {
+public class KochSnowflake {
 
 	// TO DO
 	private Line line;
@@ -20,7 +21,7 @@ public class KochCurve {
 	private int inL;
 	private int inA;
 	
-    public KochCurve(int level, int length) {
+    public KochSnowflake(int level, int length) {
     	lvl = level;
     	inL = length;
     	inA = 0;
@@ -30,6 +31,8 @@ public class KochCurve {
     
     public void draw(PApplet marker) {
     	drawKochCurve(marker, inL, inA, xLoc, yLoc, lvl);
+    	drawKochCurve(marker, inL, inA-60, xLoc, yLoc, lvl);
+    	drawKochCurve(marker, inL, inA-120, xLoc+inL, yLoc, lvl);
     }
 
     private void drawKochCurve(PApplet marker, double length, double angle, double x, double y, int level) {
