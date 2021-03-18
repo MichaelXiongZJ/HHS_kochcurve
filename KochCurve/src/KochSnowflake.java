@@ -25,8 +25,8 @@ public class KochSnowflake {
     	lvl = level;
     	inL = length;
     	inA = 0;
-    	xLoc = 200;
-    	yLoc = 200;
+    	xLoc = 500;
+    	yLoc = 500;
     }
     
     public void draw(PApplet marker) {
