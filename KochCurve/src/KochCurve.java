@@ -36,6 +36,7 @@ public class KochCurve {
     	if(level < 1) {
         //	Draw a straight line of the current length
         	line = new Line(x, y, angle, length, useAngleLine);
+        	line.draw(marker);
     	}else {
     	//	Draw a k-1 level Koch curve of 1/3 the current length
     		drawKochCurve(marker, length/3, angle, x, y, level-1);
