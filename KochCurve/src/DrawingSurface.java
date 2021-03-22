@@ -35,7 +35,7 @@ public class DrawingSurface extends PApplet {
 		text("Use the mouse wheel to change length, use UP/DOWN keys to change level.",0,15);
 		
 		stroke(0);
-	//	curve.draw(this);		
+	//	curve.draw(this);
 		snowCurve.draw(this);
 	}
 	

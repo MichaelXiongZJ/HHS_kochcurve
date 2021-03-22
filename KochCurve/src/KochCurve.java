@@ -24,8 +24,8 @@ public class KochCurve {
     	lvl = level;
     	inL = length;
     	inA = 0;
-    	xLoc = 500;
-    	yLoc = 500;
+    	xLoc = 200;
+    	yLoc = 200;
     }
     
     public void draw(PApplet marker) {
@@ -40,21 +40,24 @@ public class KochCurve {
     	}else {
     	//	Draw a k-1 level Koch curve of 1/3 the current length
     		drawKochCurve(marker, length/3, angle, x, y, level-1);
-    		xLoc = line.getX2();
-    		yLoc = line.getY2();
+    		x = line.getX2();
+    		y = line.getY2();
         //	Starting where the previous left off, draw a k-1 level Koch curve of 1/3 the
         //	current length, at an angle of 60 degrees with respect to the current angle
-    		drawKochCurve(marker, length/3, angle+60, xLoc, yLoc, level-1);
-    		xLoc = line.getX2();
-    		yLoc = line.getY2();
+    		drawKochCurve(marker, length/3, angle+60, x, y, level-1);
+    		x = line.getX2();
+    		y = line.getY2();
         //	Starting where the previous left off, draw a k-1 level Koch curve of 1/3 the
         //	current length, at an angle of -60 degrees with respect to the current angle
-    		drawKochCurve(marker, length/3, angle-60, xLoc, yLoc, level-1);
-    		xLoc = line.getX2();
-    		yLoc = line.getY2();
+    		drawKochCurve(marker, length/3, angle-60, x, y, level-1);
+    		x = line.getX2();
+    		y = line.getY2();
         //	Starting where the previous left off, draw a k-1 level Koch curve of 1/3 the
         //	current length
-    		drawKochCurve(marker, length/3, angle, xLoc, yLoc, level-1);
+    		drawKochCurve(marker, length/3, angle, x, y, level-1);
+    		x = line.getX2();
+    		y = line.getY2();
+
     	}
     }
 }
